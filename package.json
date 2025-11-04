@@ -1,32 +1,33 @@
 {
-  "name": "1023a-frontend-novo",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "1023a-backend-novo",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "tsx watch src/index-mongo.ts",
+    "dev:mongo": "tsx watch src/index-mongo.ts",
+    "build": "npm install && tsc",
+    "start": "node dist/index-mongo.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
   "dependencies": {
-    "axios": "^1.12.2",
-    "dotenv": "^17.2.3",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-router-dom": "^7.9.4"
+    "@types/react-router-dom": "^5.3.3",
+    "axios": "^1.13.1",
+    "bson": "^6.10.4",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mongodb": "^6.19.0",
+    "mysql2": "^3.14.3",
+    "react-router-dom": "^7.9.5"
   },
   "devDependencies": {
-    "@eslint/js": "^9.33.0",
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
-    "@vitejs/plugin-react-swc": "^4.0.0",
-    "eslint": "^9.33.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.39.1",
-    "vite": "^7.1.2"
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.3.0",
+    "@types/react-dom": "^19.2.2",
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2"
   }
 }
