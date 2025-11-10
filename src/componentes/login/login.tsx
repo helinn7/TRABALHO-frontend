@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Change to axios import
-
-const api = axios.create({
-    baseURL: 'http://localhost:8080' // Add your API base URL here
-});
+import api from '../../api/api'
 
 interface LoginResponse {
     token: string;
@@ -27,7 +23,8 @@ function Login() {
             const response = await api.post<LoginResponse>('/login', { email, senha });
             localStorage.setItem('token', response.data.token);
             localStorage.setItem('tipo', response.data.tipo);
-            navigate('/dashboard');
+            // redirect to home (App.tsx handles role-based UI)
+            navigate('/');
         } catch (error: unknown) {
             if (error instanceof Error) {
                 setErro(error.message);
